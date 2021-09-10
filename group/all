@@ -1,0 +1,4 @@
+php_version: "8.0"
+local_mysql: true
+mysql_user: "ahmedak001"
+mysql_password: "AHMEDAK001001"
