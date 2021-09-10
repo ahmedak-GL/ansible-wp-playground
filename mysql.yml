@@ -1,0 +1,25 @@
+- name: Install MariaDB
+  yum:
+    name:
+    - mariadb
+    - mariadb-server
+    - MySQL-python
+    state: latest
+
+- name: Start MariaDB
+  service:
+    name: mariadb
+    state: started
+    enabled: yes
+
+- name: Create a App DB
+  mysql_db:
+    name: appdata
+    state: present
+
+- name: Create MySQL User
+  mysql_user:
+    name: "{ mysql_user }"
+    password: "{ mysql_password }"
+    priv: '*.*:ALL'
+    state: present
